@@ -10,9 +10,12 @@
 #define softwareVersion "v1.0.3b"
 #define codeName "kolejka"
 
+ServerCon con = ServerCon();
+
 void setup() {
   delay(100);
   config();
+  con.setClient();
   Serial.println("Config finish");
 }
 

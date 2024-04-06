@@ -1,9 +1,8 @@
 #include "ServerCon.h"
 #include "config.h"
 
-//ServerCon con = ServerCon();
 
-ServerCon::ServerCon() {
+void ServerCon::setClient() {
   multi.addAP(ssid, password);
   if (multi.run() != WL_CONNECTED) {
     Serial.println("nie ma wifi");

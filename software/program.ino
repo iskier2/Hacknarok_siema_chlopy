@@ -36,6 +36,6 @@ void tests() {
 
 
 void sendSensorsData(){
-  //con.sendData(TEMPERATURE, String(data.temperatureSensor));
+  con.sendData(TEMPERATURE, String(data.temperatureSensor));
   return;
 }

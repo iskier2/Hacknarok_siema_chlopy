@@ -7,7 +7,7 @@ class ServerCon {
   private:
     WiFiClient client;
   public:
-    ServerCon();
+    void setClient();
     void sendData(ServerData operation, String str);
     void stopCon() {
       client.stop();
