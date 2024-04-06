@@ -3,13 +3,13 @@
 
 void config();
 
-void wifiConnection();
 void pinSetup();
 
 const char* ssid = "KPT-Conference";
 const char* password = "E2ue6Tm&";
 
 const int webPort = 4200;
+const char* host = "172.98.3.8";
 
 struct devicesData {
   byte temperatureSensor = 0;
@@ -37,7 +37,7 @@ devicesPin pin;
 
 #define DHTTYPE DHT22
 DHT dht(pin.temperatureSensor, DHTTYPE);
-//WiFiServer server(webPort);
+
 
 unsigned long currentTime = 0;
 

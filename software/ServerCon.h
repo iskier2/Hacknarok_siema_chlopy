@@ -1,4 +1,7 @@
-#include <WiFi.h>
+#ifndef SERVERCON_H_
+#define SERVERCON_H_
+
+WiFiMulti multi;
 
 class ServerCon {
 private:
@@ -8,3 +11,6 @@ public:
   void sendData(String str);
   void stopCon(){client.stop();}
 };
+
+ServerCon con = ServerCon();
+#endif

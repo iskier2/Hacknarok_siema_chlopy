@@ -1,13 +1,16 @@
 #include "program.h"
 #include "config.h"
 
+
+
 void program() {
   if (currentTime - previousTime.distanceSensor >= constTime.distanceSensor) {
     previousTime.distanceSensor = currentTime;
     distanceUpSensorProbe();
     distanceDownSensorProbe();
 
-    tests();////////////////////////////////////////
+    // tests();////////////////////////////////////////
+    sendSensorsData();
   }
 
   if (currentTime - previousTime.temperatureSensor >= constTime.temperatureSensor) {
@@ -25,4 +28,7 @@ void tests() {
   Serial.print(data.temperatureSensor);
   Serial.print("|");
   Serial.println(data.lightSensor);
+}
+void sendSensorsData(){
+  return;
 }

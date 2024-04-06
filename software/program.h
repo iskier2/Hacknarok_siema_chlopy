@@ -5,6 +5,8 @@ void program();
 
 void tests();
 
+void sendSensorsData();
+
 struct timeData {
   const int distanceSensor = 1000;
   const int temperatureSensor = 2000;

@@ -6,13 +6,9 @@ void config() {
   
   pinSetup();
   dht.begin();
-
- wifiConnection();
 }
 
-void wifiConnection() {
 
-}
 
 void pinSetup() {
   pinMode(pin.temperatureSensor, INPUT);

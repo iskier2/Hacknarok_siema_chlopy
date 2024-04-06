@@ -1,18 +1,5 @@
-#include <WiFi.h>
 #include "ServerCon.h"
-#ifndef STASSID
-#define STASSID "KPT-Conference"
-#define STAPSK "E2ue6Tm&"
-#endif
-
-const char* ssid = STASSID;
-const char* password = STAPSK;
-
-const char* host = "172.98.3.8";
-const uint16_t port = 4242;
-
-WiFiMulti multi;
-
+#include "config.h"
 ServerCon::ServerCon() {
   multi.addAP(ssid, password);
   if (multi.run() != WL_CONNECTED) {
@@ -20,7 +7,7 @@ ServerCon::ServerCon() {
     delay(10000);
     rp2040.reboot();
   }
-  if (!client.connect(host, port)) {
+  if (!client.connect(host, webPort)) {
     Serial.println("wyjebało serwer u Kamila");
     return;
   }
@@ -48,8 +35,8 @@ void ServerCon::sendData(String str) {
 
 // void setup() {
 //   Serial.begin(115200);
-//   ServerCon* con = new ServerCon();
-//   con -> sendData("Pierdol sie Kamil");
+//   ServerCon con = ServerCon();
+//   con.sendData("Pierdol sie Kamil");
 // }
 
 // void loop() {
