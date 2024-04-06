@@ -1,8 +1,12 @@
+#include <DHT.h>
+
 #include "config.h"
+#include "sensors.h"
 #include "program.h"
 #include "web.h"
 
 #define softwareVersion "v1.0.2b"
+#define codeName "kolejka"
 
 void setup() {
   delay(100);
@@ -12,4 +16,5 @@ void setup() {
 
 void loop() {
   currentTime = millis();
+  program();
 }
