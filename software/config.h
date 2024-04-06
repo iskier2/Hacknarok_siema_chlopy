@@ -48,6 +48,18 @@ devicesPin pin;
 #define DHTTYPE DHT22
 DHT dht(pin.temperatureSensor, DHTTYPE);
 
+enum ServerData {
+  //post
+  TEMPERATURE, 
+  PEOPLE_COUNT, 
+  ERROR, 
+  SPEED, 
+  //get
+  MIN_TEMP, 
+  MAX_TEMP, 
+  CURR_SPEED
+};
+
 unsigned long currentTime = 0;
 
 #endif

@@ -34,6 +34,8 @@ void tests() {
   Serial.println(data.lightSensor);
 }
 
-void sendSensorsData() {
+
+void sendSensorsData(){
+  con.sendData(TEMPERATURE, String(data.temperatureSensor));
   return;
 }
