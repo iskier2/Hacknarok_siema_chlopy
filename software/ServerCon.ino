@@ -1,5 +1,6 @@
 #include "ServerCon.h"
 #include "config.h"
+
 ServerCon::ServerCon() {
   multi.addAP(ssid, password);
   if (multi.run() != WL_CONNECTED) {
@@ -33,11 +34,5 @@ void ServerCon::sendData(String str) {
   }
 }
 
-// void setup() {
-//   Serial.begin(115200);
 //   ServerCon con = ServerCon();
 //   con.sendData("Pierdol sie Kamil");
-// }
-
-// void loop() {
-// }

@@ -3,12 +3,10 @@
 void config() {
   Serial.begin(115200);
   delay(100);
-  
+
   pinSetup();
   dht.begin();
 }
-
-
 
 void pinSetup() {
   pinMode(pin.temperatureSensor, INPUT);

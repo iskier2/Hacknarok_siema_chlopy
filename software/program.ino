@@ -1,8 +1,6 @@
 #include "program.h"
 #include "config.h"
 
-
-
 void program() {
   if (currentTime - previousTime.distanceSensor >= constTime.distanceSensor) {
     previousTime.distanceSensor = currentTime;
@@ -18,6 +16,12 @@ void program() {
     temperatureSensorProbe();
     lightSensorProbe();
   }
+
+  if (currentTime - previousTime.motor >= constTime.motor) {
+    previousTime.motor = currentTime;
+    motorAutomationProcess();
+  }
+
 }
 
 void tests() {
@@ -29,6 +33,7 @@ void tests() {
   Serial.print("|");
   Serial.println(data.lightSensor);
 }
-void sendSensorsData(){
+
+void sendSensorsData() {
   return;
 }

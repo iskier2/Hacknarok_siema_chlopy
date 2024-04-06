@@ -3,10 +3,10 @@
 
 void temperatureSensorProbe() {
   data.temperatureSensor = dht.readTemperature();
-  if (isnan(data.temperatureSensor)) {
+  /*if (isnan(data.temperatureSensor)) {
     Serial.println("Failed to read from DHT sensor!");
     return;
-  }
+    }*/
 }
 
 void distanceUpSensorProbe() {
@@ -16,7 +16,11 @@ void distanceUpSensorProbe() {
   delayMicroseconds(10);
   digitalWrite(pin.distanceUpTrigSensor, LOW);
 
-  data.distanceUpSensor = (pulseIn(pin.distanceUpEchoSensor, HIGH) * .0343) / 2;
+  if (remote.distanceUpSensorMax < ((pulseIn(pin.distanceUpEchoSensor, HIGH) * .0343) / 2)) {
+    data.distanceUpSensor = true;
+  } else {
+    data.distanceUpSensor = false;
+  }
 }
 
 void distanceDownSensorProbe() {
@@ -26,7 +30,11 @@ void distanceDownSensorProbe() {
   delayMicroseconds(10);
   digitalWrite(pin.distanceDownTrigSensor, LOW);
 
-  data.distanceDownSensor = (pulseIn(pin.distanceDownEchoSensor, HIGH) * .0343) / 2;
+  if (remote.distanceDownSensorMax < ((pulseIn(pin.distanceDownEchoSensor, HIGH) * .0343) / 2)) {
+    data.distanceDownSensor = true;
+  } else {
+    data.distanceDownSensor = false;
+  }
 }
 
 void lightSensorProbe() {

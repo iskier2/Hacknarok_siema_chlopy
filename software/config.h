@@ -11,10 +11,20 @@ const char* password = "E2ue6Tm&";
 const int webPort = 4200;
 const char* host = "172.98.3.8";
 
+struct remoteData {
+  byte max = 10;
+  byte min = 0;
+  int speed = 0;
+  const byte distanceUpSensorMax = 10;
+  const byte distanceDownSensorMax = 10;
+};
+
+remoteData remote;
+
 struct devicesData {
   byte temperatureSensor = 0;
-  byte distanceUpSensor = 0;
-  byte distanceDownSensor = 0;
+  bool distanceUpSensor = false;
+  bool distanceDownSensor = false;
   byte lightSensor = 0;
   byte motor = 0;
   bool light = false;
@@ -37,7 +47,6 @@ devicesPin pin;
 
 #define DHTTYPE DHT22
 DHT dht(pin.temperatureSensor, DHTTYPE);
-
 
 unsigned long currentTime = 0;
 

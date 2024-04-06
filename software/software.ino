@@ -1,11 +1,13 @@
 #include <DHT.h>
 #include <WiFi.h>
+
 #include "config.h"
 #include "sensors.h"
 #include "program.h"
-#include "web.h"
 #include "ServerCon.h"
-#define softwareVersion "v1.0.2b"
+#include "motor.h"
+
+#define softwareVersion "v1.0.3b"
 #define codeName "kolejka"
 
 void setup() {
