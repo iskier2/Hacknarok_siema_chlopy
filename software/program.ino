@@ -1,6 +1,6 @@
 #include "program.h"
 #include "config.h"
-
+#include "ServerCon.h"
 void program() {
   if (currentTime - previousTime.distanceSensor >= constTime.distanceSensor) {
     previousTime.distanceSensor = currentTime;

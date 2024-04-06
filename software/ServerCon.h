@@ -13,5 +13,5 @@ class ServerCon {
       client.stop();
     }
 };
-
+ServerCon con=ServerCon();
 #endif

@@ -8,7 +8,7 @@ void pinSetup();
 const char* ssid = "KPT-Conference";
 const char* password = "E2ue6Tm&";
 
-const int webPort = 4200;
+const int webPort = 4242;
 const char* host = "172.98.3.8";
 
 struct remoteData {

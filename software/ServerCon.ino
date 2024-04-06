@@ -16,6 +16,7 @@ void ServerCon::setClient() {
 }
 
 void ServerCon::sendData(ServerData operation, String str) {
+  Serial.println("zapytanie");
   String operationS;
   switch(operation){
     case TEMPERATURE: operationS = "temperature"; break;
