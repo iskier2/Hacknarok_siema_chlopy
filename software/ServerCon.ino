@@ -1,6 +1,7 @@
 #include "ServerCon.h"
 #include "config.h"
 
+//ServerCon con = ServerCon();
 
 ServerCon::ServerCon() {
   multi.addAP(ssid, password);

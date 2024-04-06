@@ -14,5 +14,4 @@ class ServerCon {
     }
 };
 
-ServerCon con = ServerCon();
 #endif
