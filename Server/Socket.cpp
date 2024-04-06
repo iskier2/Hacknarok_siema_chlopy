@@ -47,9 +47,9 @@ public:
         std::cout << "Received: " << buffer << std::endl;
 
         // Send response to the client
-        const char *hello = "pierdol sie filip!\n";
-        send(new_socket, hello, strlen(hello), 0);
-        std::cout << "Response sent\n";
+//        const char *hello = "pierdol sie filip!\n";
+//        send(new_socket, hello, strlen(hello), 0);
+//        std::cout << "Response sent\n";
 
         // Close the connection
         close(new_socket);
