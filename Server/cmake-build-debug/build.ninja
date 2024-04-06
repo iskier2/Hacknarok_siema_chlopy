@@ -70,13 +70,6 @@ build CMakeFiles/RPicoWConnection.dir/DataBase.cpp.o: CXX_COMPILER__RPicoWConnec
   OBJECT_DIR = CMakeFiles/RPicoWConnection.dir
   OBJECT_FILE_DIR = CMakeFiles/RPicoWConnection.dir
 
-build CMakeFiles/RPicoWConnection.dir/WebServer.cpp.o: CXX_COMPILER__RPicoWConnection_unscanned_Debug /Users/kamilmroz/Desktop/hacknarok/Server/WebServer.cpp || cmake_object_order_depends_target_RPicoWConnection
-  DEP_FILE = CMakeFiles/RPicoWConnection.dir/WebServer.cpp.o.d
-  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6 -fcolor-diagnostics
-  INCLUDES = -I/Users/kamilmroz/Desktop/hacknarok/Server/sqlite-amalgamation-3450200
-  OBJECT_DIR = CMakeFiles/RPicoWConnection.dir
-  OBJECT_FILE_DIR = CMakeFiles/RPicoWConnection.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RPicoWConnection
@@ -85,7 +78,7 @@ build CMakeFiles/RPicoWConnection.dir/WebServer.cpp.o: CXX_COMPILER__RPicoWConne
 #############################################
 # Link the executable RPicoWConnection
 
-build RPicoWConnection: CXX_EXECUTABLE_LINKER__RPicoWConnection_Debug CMakeFiles/RPicoWConnection.dir/main.cpp.o CMakeFiles/RPicoWConnection.dir/Socket.cpp.o CMakeFiles/RPicoWConnection.dir/DataBase.cpp.o CMakeFiles/RPicoWConnection.dir/WebServer.cpp.o
+build RPicoWConnection: CXX_EXECUTABLE_LINKER__RPicoWConnection_Debug CMakeFiles/RPicoWConnection.dir/main.cpp.o CMakeFiles/RPicoWConnection.dir/Socket.cpp.o CMakeFiles/RPicoWConnection.dir/DataBase.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.6
   LINK_LIBRARIES = -Wl,-rpath,/Users/kamilmroz/Desktop/hacknarok/Server/sqlite-amalgamation-3450200  -lsqlite3
   LINK_PATH = -L/Users/kamilmroz/Desktop/hacknarok/Server/sqlite-amalgamation-3450200
