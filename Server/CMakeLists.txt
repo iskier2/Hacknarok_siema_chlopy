@@ -13,7 +13,8 @@ link_directories(${SQLITE_DIR})
 
 add_executable(RPicoWConnection main.cpp
         Socket.cpp
-        DataBase.cpp)
+        DataBase.cpp
+)
 
 # Link against SQLite library
 target_link_libraries(RPicoWConnection sqlite3)

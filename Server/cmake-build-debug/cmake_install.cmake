@@ -1,4 +1,4 @@
-# Install script for directory: /Users/kamilmroz/CLionProjects/RPicoWConnection
+# Install script for directory: /Users/kamilmroz/Desktop/hacknarok/Server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/kamilmroz/CLionProjects/RPicoWConnection/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/kamilmroz/Desktop/hacknarok/Server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
