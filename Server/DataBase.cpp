@@ -28,22 +28,6 @@ public:
             fprintf(stderr, "Opened database successfully\n");
         }
     }
-    void init(){
-        rc = sqlite3_open("SKW.db", &db);
-        /* Create SQL statement */
-        sql = "CREATE TABLE IF NOT EXISTS main("  \
-      "ID INT PRIMARY KEY   NOT NULL AUTO_INCREMENT," \
-      "lightness    FLOAT   NOT NULL," \
-      "people_count INT   NOT NULL," \
-      "lift_speed   FLOAT   NOT NULL);";
-        /* Execute SQL statement */
-        rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-        if( rc!=SQLITE_OK )
-        {
-            std::cout<<"SQL error: "<<sqlite3_errmsg(db)<<"\n";
-            sqlite3_free(zErrMsg);
-        }
-    }
     bool query(const std::string& query) {
         char *errMsg = nullptr;
         int rc = sqlite3_exec(db, query.c_str(), nullptr, nullptr, &errMsg);

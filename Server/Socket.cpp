@@ -34,7 +34,7 @@ public:
         }
         std::cout << "Server listening on port "<< port<<"\n";
     }
-    void getData(){
+    auto getData(){
         // Accept incoming connections
         int new_socket;
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen))<0) {
@@ -47,12 +47,13 @@ public:
         std::cout << "Received: " << buffer << std::endl;
 
         // Send response to the client
-//        const char *hello = "pierdol sie filip!\n";
-//        send(new_socket, hello, strlen(hello), 0);
-//        std::cout << "Response sent\n";
+        const char *hello = "pierdol sie filip!\n";
+        send(new_socket, hello, strlen(hello), 0);
+        std::cout << "Response sent\n";
 
         // Close the connection
         close(new_socket);
+        return buffer;
     }
     void closeSocket(){
         // Close the server socket

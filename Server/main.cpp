@@ -34,6 +34,21 @@ int main() {
     while (true) {
         // get new data
         socket.getData();
+//        auto res = socket.getData();
+//        std::vector<std::string> data = {};
+//        std::string text = "";
+//        while(*res++){
+//            if(*res==';'){
+//                data.push_back(text);
+//                text="";
+//            }
+//            else{
+//                text+=*res;
+//            }
+//
+//        }
+
+
 //        std::string value1;
 //        std::string value2;
 //        std::string value3;
