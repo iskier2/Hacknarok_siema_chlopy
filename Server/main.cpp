@@ -16,7 +16,7 @@
 
 
 int main() {
-    Socket socket(PORT);
+    SocketCon socket(PORT);
     DB db = DB();
     db.query("DROP TABLE IF EXISTS main;");
     db.query("CREATE TABLE main("
@@ -33,24 +33,31 @@ int main() {
 //    for (int i = 0; i < data[0].size(); ++i) {
 //        std::cout << data[0][i];
 //    }
-
+    int i=0;
     while (true) {
         // get new data
-        socket.getData();
-        auto res = socket.getData();
-        std::vector<std::string> data = {};
-        std::string text = "";
-        while(*res++){
-            if(*res==';'){
-                data.push_back(text);
-                text="";
-            }
-            else{
-                text+=*res;
-            }
+        if(i%100==0){
+            socket.getData();
+//            std::vector<std::string> data = {};
+//            std::string text = "";
+//            while(*res++){
+//                if(*res==';'){
+//                    data.push_back(text);
+//                    text="";
+//                }
+//                else{
+//                    text+=*res;
+//                }
+//            }
 
         }
 
+        i++;
+
+//        std::cout<<(data[0]);
+//        for (int i = 0; i < data.size(); ++i) {
+//            if (data[i])
+//        }
 
 //        std::string value1;
 //        std::string value2;

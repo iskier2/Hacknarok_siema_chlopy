@@ -4,14 +4,16 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-class Socket{
+#include <pcap/socket.h>
+
+class SocketCon{
 private:
     int server_fd;
     sockaddr_in address;
     int addrlen = sizeof(address);
     int new_socket;
 public:
-    Socket(int port){
+    SocketCon(int port){
         // Create a socket
         server_fd = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -42,14 +44,14 @@ public:
     }
     auto getData(){
 
-
         // Read data from the client
         char buffer[1024] = {0};
         int valread = read(new_socket, buffer, 1024);
-        std::cout << "Received: " << buffer << std::endl;
 
+//        ssize_t bytes_received = recv(new_socket, buffer, sizeof(buffer), 0);
+        std::cout << "Received: " << buffer[0] << std::endl;
         // Send response to the client
-        const char *hello = "pierdol sie filip!\n";
+        const char *hello = "filip!\n";
         send(new_socket, hello, strlen(hello), 0);
         std::cout << "Response sent\n";
 
@@ -57,6 +59,7 @@ public:
 //        close(new_socket);
         return buffer;
     }
+
     void closeSocket(){
         // Close the server socket
         close(server_fd);
