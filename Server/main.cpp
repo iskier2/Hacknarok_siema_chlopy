@@ -12,6 +12,9 @@
 #define ADDRESS "172.98.3.8"
 #define PORT 4242
 
+
+
+
 int main() {
     Socket socket(PORT);
     DB db = DB();
@@ -34,19 +37,19 @@ int main() {
     while (true) {
         // get new data
         socket.getData();
-//        auto res = socket.getData();
-//        std::vector<std::string> data = {};
-//        std::string text = "";
-//        while(*res++){
-//            if(*res==';'){
-//                data.push_back(text);
-//                text="";
-//            }
-//            else{
-//                text+=*res;
-//            }
-//
-//        }
+        auto res = socket.getData();
+        std::vector<std::string> data = {};
+        std::string text = "";
+        while(*res++){
+            if(*res==';'){
+                data.push_back(text);
+                text="";
+            }
+            else{
+                text+=*res;
+            }
+
+        }
 
 
 //        std::string value1;
