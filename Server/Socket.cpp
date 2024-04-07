@@ -44,14 +44,14 @@ public:
     }
     auto getData(){
 
+
         // Read data from the client
         char buffer[1024] = {0};
         int valread = read(new_socket, buffer, 1024);
+        std::cout << "Received: " << buffer << std::endl;
 
-//        ssize_t bytes_received = recv(new_socket, buffer, sizeof(buffer), 0);
-        std::cout << "Received: " << buffer[0] << std::endl;
         // Send response to the client
-        const char *hello = "filip!\n";
+        const char *hello = "pierdol sie filip!\n";
         send(new_socket, hello, strlen(hello), 0);
         std::cout << "Response sent\n";
 
