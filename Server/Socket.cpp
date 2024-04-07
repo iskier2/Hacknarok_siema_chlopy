@@ -9,6 +9,7 @@ private:
     int server_fd;
     sockaddr_in address;
     int addrlen = sizeof(address);
+    int new_socket;
 public:
     Socket(int port){
         // Create a socket
@@ -33,13 +34,14 @@ public:
             std::cerr << "Listen failed\n";
         }
         std::cout << "Server listening on port "<< port<<"\n";
-    }
-    auto getData(){
         // Accept incoming connections
-        int new_socket;
+
         if ((new_socket = accept(server_fd, (struct sockaddr *)&address, (socklen_t*)&addrlen))<0) {
             std::cerr << "Accept failed\n";
         }
+    }
+    auto getData(){
+
 
         // Read data from the client
         char buffer[1024] = {0};
@@ -52,7 +54,7 @@ public:
         std::cout << "Response sent\n";
 
         // Close the connection
-        close(new_socket);
+//        close(new_socket);
         return buffer;
     }
     void closeSocket(){
