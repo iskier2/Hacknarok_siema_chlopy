@@ -19,9 +19,13 @@ int main() {
     db.query("CREATE TABLE main("
              "ID INTEGER PRIMARY KEY,"
              "lightness FLOAT NOT NULL,"
+             "temperature FLOAT NOT NULL,"
              "people_count INT NOT NULL,"
-             "lift_speed FLOAT NOT NULL);");
-    db.query("INSERT INTO main (lightness, people_count, lift_speed) VALUES (1, 30, 0.5);");
+             "error CHAR(256) NOT NULL,"
+             "lift_speed FLOAT NOT NULL,"
+             "temp_min FLOAT NOT NULL,"
+             "temp_max FLOAT NOT NULL);");
+    db.query("INSERT INTO main (lightness, temperature, people_count, error, lift_speed, temp_min, temp_max) VALUES (1, 16, 30, '', 1, 10, 19);");
 //    std::vector<std::vector<std::string>> data = db.selectQuery("SELECT * FROM main;");
 //    for (int i = 0; i < data[0].size(); ++i) {
 //        std::cout << data[0][i];

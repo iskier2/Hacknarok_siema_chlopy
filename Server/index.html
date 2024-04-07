@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>strona</title>
-
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
 </head>
 <body>
+    <p>stronka</p>
     <div id="main">
 
     </div>
 <script>
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById("main").innerHTML = this.responseText;
-    }
-    xhttp.open("GET", "ajax_info.txt", true);
-    xhttp.send();
     setInterval(()=>{
+        $.ajax({
+            url: "/data",
+            method: "GET",
+        }).done(function( data ) {
+            if ( console && console.log ) {
+                document.getElementById("main").innerText = JSON.stringify(data);
+            }
+            console.log(data);
+        })
 
-    },1000);
+    },500)
+
 </script>
 </body>
 </html>
